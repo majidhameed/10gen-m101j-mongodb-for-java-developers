@@ -1,0 +1,94 @@
+In JSON at top level need to be a dictionary/associative map
+
+www.json.org
+object=document
+
+http://www.sparkjava.com/
+http://www.sparkjava.com/why.html
+http://www.sparkjava.com/download.html
+http://localhost:4567/
+http://freemarker.sourceforge.net/
+
+bsonspec.org
+
+When to Denormalize
+	1:1			Embed - No Modificiation Anomalies
+	1:many		Embed(from the many to one)
+	many:many	Link
+
+api.mongodb.org
+
+Index is single most important to increase performance in RDBMS and NOSQL DBs
+
+In order to utilize an index in MongoDB we need to give left most set
+Reads are faster if index is utilized but Writes are slower
+
+(a,b,c)
+b - No
+a - Yes
+c - No
+a,b - Yes
+a,c - a Yes c No
+
+2 multi-key indexes can not be created. 
+That is compound index for both Array values is not allowed.
+
+Sparse Index uniquely indexes keys that exists in doc.
+If the key is not in more than 1 doc. MongoDB treats that key as NULL.
+So it can't allow multiple key to be of value NULL so sparse indexes is the solution to this problem.
+
+Compund Index on d,c,b,a
+d - Yes
+d,c - Yes
+d,b - Yes only d part
+c,b - No
+
+find, findOne, update, remove - all can benefit from indexes
+
+Index size matters. We want to keep the whole Index in Memory
+
+Index Cardinality
+- Regular 1:1
+- Sparse <= documents
+- MultiKey > documents
+
+Index need to be as selective as possible
+
+$gt and $lt may uses index but it cant use it efficiently
+$ne all negative operators have same problem
+$regex if ^ is not there then its not efficient
+
+Profiler
+0 - off 
+1 - log slow queries
+2 - all queries
+
+iostat on Unix. perfmon on Windows
+
+insert must include the shard key
+update,remove,find if shard key is not there then its broad casts to all shards
+
+Grouping returns unique values for the keys that are grouped by _id
+
+$sort is memory hog
+
+1st $skip and then $limit both makes sense only when we $sort first
+
+http://docs.mongodb.org/manual/reference/sql-aggregation-comparison/
+
+Alternatives to Aggregation Framework
+1. Map Reduce (version built into Mongo)
+2. Hadoop
+
+Write Concern
+w j
+0 0 fire and forget
+1 0 acknowledge
+1 1 commit to journal - Rollback might occur
+0 1 getLastError
+
+Failover can result in rollback
+
+Sharding is at DB level not at collection level
+
+Array can't be set as a Shard Key

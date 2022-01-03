@@ -1,4 +1,6 @@
 ![](https://img.shields.io/github/license/majidhameed/10gen-m101j-mongodb-for-java-developers?style=plastic)
+![](https://img.shields.io/github/forks/majidhameed/issuetracker?style=plastic)
+![](https://img.shields.io/github/stars/majidhameed/issuetracker?style=plastic)
 ### Course Title: 
 M101J: MongoDB for Java Developers
 

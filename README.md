@@ -2,7 +2,6 @@
 ![](https://img.shields.io/github/forks/majidhameed/10gen-m101j-mongodb-for-java-developers?style=plastic)
 ![](https://img.shields.io/github/stars/majidhameed/10gen-m101j-mongodb-for-java-developers?style=plastic)
 ![](http://hits.dwyl.com/majidhameed/10gen-m101j-mongodb-for-java-developers.svg?style=flat)
-![](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https://github.com/majidhameed/10gen-m101j-mongodb-for-java-developers)
 
 ### Course Title: 
 M101J: MongoDB for Java Developers
